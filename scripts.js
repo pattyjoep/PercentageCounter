@@ -30,11 +30,15 @@ $(document).ready(function() {
     });
 
     $(".reset-btn").click(function() {
-        localStorage.removeItem("total");
-        localStorage.removeItem("totalAdd");
-        localStorage.removeItem("totalMinus");
-        localStorage.removeItem("score");
-        location.reload(true);
+        if (confirm("Clicking 'OK' will reset all numbers. Do you want to proceed?")) {
+            localStorage.removeItem("total");
+            localStorage.removeItem("totalAdd");
+            localStorage.removeItem("totalMinus");
+            localStorage.removeItem("score");
+            location.reload(true);
+        } else {
+
+        }
     });
     
     function getLocalStorage() {
